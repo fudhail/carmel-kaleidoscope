@@ -1,0 +1,87 @@
+
+.wrapper header.header .logo {}
+
+.wrapper header.header .logo h2 {
+    margin: 0 0 0 40px;
+    padding: 0;
+}
+
+.wrapper header.header .logo h2 a {
+    color: #061e37;
+    font-family: "Raleway", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    line-height: 70px;
+    padding: 22px 0;
+    text-transform: uppercase;
+}
+
+.wrapper header.header .menu {
+    margin: 0
+}
+
+.wrapper header.header .menu ul {
+    float: right;
+    margin: 0;
+    padding: 0;
+    margin-right: 4px;
+}
+
+.wrapper header.header .menu ul li {
+    display: inline-block;
+    list-style: outside none none;
+    margin: 0 -4px 0 0;
+}
+
+.wrapper header.header .menu ul li a {
+    color: rgb(6, 30, 55);
+    font-family: "Raleway", sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 70px;
+    padding: 26px 50px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.wrapper header.header .menu ul li.active a {
+    background: #40c4ff;
+    color: #fff;
+}
+
+.wrapper header.header .menu ul li a:hover {
+    background: #40c4ff;
+    color: #fff;
+}
+
+.wrapper section.bg-text-area .bg-text {
+   
+    background-size: 100% 100%;
+    padding: 205px 280px;
+}
+
+.wrapper section.bg-text-area .container {}
+
+.wrapper section.bg-text-area .bg-text h3 {
+    color: #fff;
+    font-family: Geometria;
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.wrapper section.bg-text-area .bg-text p{
+    color: #fff;
+    font-family: Geometria;
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.button{
+     color: black}

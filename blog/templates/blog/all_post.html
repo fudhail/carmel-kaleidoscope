@@ -1,0 +1,90 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+
+{% block content %}
+<link href="{% static 'blog/css/Animated-Menu-Icon.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'blog/css/Animated-Scroll-Down-Mouse.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'blog/css/dh-card-image-left-dark.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'blog/css/styles.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'blog/css/index.css' %}" rel="stylesheet" type="text/css">
+<nav id="navbar" class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+    <div class="container"><a class="navbar-brand logo" href="{% url 'index' %}">CARMEL SCHOOL KUWAIT</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse"
+            id="navcol-1">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+                <li class="nav-item"><a class="nav-link  active" href="{% url 'all-posts'  %}">Posts</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'contact-us' %}">Contact</a></li>
+            </ul>
+            {% if request.user.is_authenticated %}
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+                      <a href="{% url 'profile-update' request.user.slug %}" class="dropdown-item">My Profile</a>
+                      {% if request.user.is_author %}
+                         <a href="{% url 'my-posts' %}" class="dropdown-item">My Posts</a>
+                      {% endif %}
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+
+                    </div>
+
+
+                </li>
+            </ul>
+  
+            {% endif %}
+        </div>
+    </div>
+</nav>
+
+
+    <main class="page blog-post-list">
+
+        <section class="clean-block clean-blog-list dark">
+
+            <div class="container">
+
+                <div class="block-heading">
+                    <h2 class="text-info" style="height: 23px;">All Posts</h2>
+                </div>
+                <div class="category-buttons">
+            <a href="{% url 'all-posts' %}"><button>All</button></a>
+            {% for category in categories %}
+            <a href="{% url 'category' category.slug %}"><button>{{ category.name }}</button></a>
+            {% endfor %}
+        </div><br>
+          {% for post in posts %}
+              <div class="container">
+                <div class="photo-card">
+                  <div class="photo-background" style="background-image:url(&quot;{{ post.files.url }}&quot;);"></div>
+                    <div class="photo-details">
+                        <h1>{{ post.title }}</h1>
+
+
+                        <span class="text-muted">{{ post.date }} by {{ post.author.get_full_name }}
+                        </span>
+                        <p>hello</p>
+                        <div class="photo-tags" style="float: right;">
+                          <br>
+                            <ul>
+                                <li><a href="{% url 'post-detail' post.slug %}">View</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+</div>
+            <br>
+            {% endfor %}
+        </section>
+    </main>
+
+
+{% endblock %}

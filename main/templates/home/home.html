@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+{% block extra_head %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Front page</title>
+
+<link href="{% static 'home/css/bootstrap.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'home/css/responsive.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'home/css/style.css' %}" rel="stylesheet" type="text/css">
+
+</head>
+{% endblock %}
+
+
+<body>
+
+    <div class="wrapper" style="background-image:url({% static 'home/css/img/bg-iamges.jpg' %});">
+
+        <section class="bg-text-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="bg-text">
+                            <h3 href="/blogs" >CARMEL KALEIDOSCOPE</h3>
+                            <hr>
+
+                            <p>A CARMEL FIESTA</p>
+
+                        </div>
+                        <div class="center-floated"><h3>visit: {{count}}</h3></div>
+                        <br>
+                       <a href="/blogs"><button type="button" class="btn btn-primary btn-lg btn-block">BLOG</button></a>
+                       <br>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+</body>
+
+</html>

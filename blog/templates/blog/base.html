@@ -1,0 +1,90 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+<html>
+    <head>
+        {% block extra_head %}
+        {% endblock %}
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>CARMEL KALEIDOSCOPE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="{% static 'blog/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'blog/css/smoothproducts.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'blog/css/Swiper-Slider-Card-For-Blog-Or-Product-1.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'blog/css/Swiper-Slider-Card-For-Blog-Or-Product.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'blog/css/Projects-Horizontal.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'blog/css/Article-List.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'blog/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'blog/css/simple-line-icons.min.css' %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://unpkg.com/@bootstrapstudio/bootstrap-better-nav/dist/bootstrap-better-nav.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/@bootstrapstudio/bootstrap-better-nav/dist/bootstrap-better-nav.min.css">
+</head>
+
+<body>
+
+
+        {% block content %}
+        {% endblock %}
+
+            <script src="{% static 'blog/js/jquery.min.js' %}"></script>
+    <script src="{% static 'blog/js/bootstrap.min.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="{% static 'blog/js/smoothproducts.min.js' %}"></script>
+    <script src="{% static 'blog/js/theme.js' %}"></script>
+    <script src="{% static 'blog/js/Swiper-Slider-Card-For-Blog-Or-Product.js' %}"></script>
+    <script src="https://unpkg.com/@bootstrapstudio/bootstrap-better-nav/dist/bootstrap-better-nav.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="https://unpkg.com/@bootstrapstudio/bootstrap-better-nav/dist/bootstrap-better-nav.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+{% block scripts %}
+{% endblock scripts %}
+<footer class="page-footer dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <h5>Get started</h5>
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'contact-us' %}">Contact Us</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <p>© 2020 Copyright Text</p>
+    </div>
+</footer>
+    </body>
+</html>
