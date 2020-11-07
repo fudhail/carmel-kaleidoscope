@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponseRedirect
 from blog.models import Category, Post, SubCategory
 from account.models import MyUser, User
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # from django.views import View
 from django.views.generic import FormView, ListView, DetailView, CreateView, UpdateView, DeleteView
 from blog.forms import ContactForm, PostForm
@@ -101,6 +102,7 @@ class PostView(ListView):
     model = Post
     context_object_name = "posts"
     template_name = "blog/all_post.html"
+    paginate_by = 6
     queryset = Post.objects.filter(status="P")
 
     def get_context_data(self):
