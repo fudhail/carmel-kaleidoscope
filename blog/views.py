@@ -102,7 +102,7 @@ class PostView(ListView):
     model = Post
     context_object_name = "posts"
     template_name = "blog/all_post.html"
-    paginate_by = 6
+    paginate_by = 10
     queryset = Post.objects.filter(status="P")
 
     def get_context_data(self):
