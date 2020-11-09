@@ -63,7 +63,7 @@
                     <div class="blog-slider__item swiper-slide">
                         <div></div>
                         <div class="blog-slider__img"><img src="{% static 'blog/img/image1.jpg' %}"></div>
-                        <div class="blog-slider__content"><span class="blog-slider__code">{{ category.date }}</span><div class="blog-slider__title">{{ category.name}}</div><div class="blog-slider__text">{{ category.description }}</div><a class="class=&quot;blog-slider__button" href="{% url 'category' category.slug %}">VIEW</a></div>
+                        <div class="blog-slider__content"><span class="blog-slider__code">{{ category.date }}</span><div class="blog-slider__title">{{ category.name}}</div><div class="blog-slider__text">{{ category.description|safe }}</div><a class="class=&quot;blog-slider__button" href="{% url 'category' category.slug %}">VIEW</a></div>
                     </div>
 
  {% endfor %}
