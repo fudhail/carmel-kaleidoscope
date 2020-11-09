@@ -68,6 +68,7 @@ class SubCategoryView(ListView):
     model = Post
     context_object_name = "posts"
     template_name = "blog/blog-post-list.html"
+    paginate_by = 10
     queryset = Post.objects.filter(status="P")
 
     def get_context_data(self):

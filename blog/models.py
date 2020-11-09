@@ -9,8 +9,8 @@ from django.urls import reverse
 class Category(models.Model):
     name = models.CharField(max_length=50)
     slug = models.CharField(max_length=60, unique=True, blank=True)
-    description = models.CharField(max_length=255, default="subcategory")
-    date = models.CharField(max_length=255, default="14 November 2020")
+    description = tinymce_models.HTMLField()
+    date = models.CharField(max_length=255, default="15 November 2020")
 
     def __str__(self):
         return self.name
@@ -46,14 +46,13 @@ class Post(models.Model):
         ('P', 'Publish')
     ]
     title = models.CharField(max_length=120)
-
     slug = models.CharField(max_length=60, unique=True, blank=True)
     content = tinymce_models.HTMLField()
     status = models.CharField(max_length=1, choices=statuses)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     subcategory = models.ForeignKey(SubCategory, on_delete=models.CASCADE, null=True)
     author = models.ForeignKey(MyUser, on_delete=models.CASCADE)
-    student = models.CharField(max_length=120, default="student name", blank=True)
+    grade = models.CharField(max_length=120, default="student name", blank=True)
     thumbnail = models.FileField(upload_to='blog/post/thumbnail', null=True, blank=True)
     files = models.FileField(upload_to='blog/post', null=True, blank=True)
     video_or_not = models.BooleanField(default=False)
