@@ -96,6 +96,7 @@ class PostListView(ListView):
     def get_context_data(self):
         context = super().get_context_data()
         context['categories'] = Category.objects.all()
+        context['avatar'] = MyUser.objects.all()
         return context
 
 
