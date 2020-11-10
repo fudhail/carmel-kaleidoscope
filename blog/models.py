@@ -55,7 +55,8 @@ class Post(models.Model):
     grade = models.CharField(max_length=120, default="student name", blank=True)
     thumbnail = models.FileField(upload_to='blog/post/thumbnail', null=True, blank=True)
     files = models.FileField(upload_to='blog/post', null=True, blank=True)
-    video_or_not = models.BooleanField(default=False)
+    video = models.BooleanField(default=False)
+    pdf = models.BooleanField(default=False)
     date = models.DateField(auto_now=True)
     likes = models.ManyToManyField(User, related_name='blog_likes')
 
