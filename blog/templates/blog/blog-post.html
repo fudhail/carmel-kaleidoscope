@@ -64,7 +64,7 @@
         <iframe
           src="{{ post.files.url }}"
           width="100%"
-          height="1000px"
+          height="1200px"
           style="border: none;">
           <p>Your browser does not support PDFs.
             <a href="{{ post.files.url }}">Download the PDF</a>.</p>
@@ -78,7 +78,7 @@
 
                     <div class="post-body">
                         <h3>{{ post.title }}</h3>
-                        <div class="post-info"><span>By {{ post.student }}</span><span>{{ post.date }}</span></div>
+                        <div class="post-info"><span>{{ post.grade }}</span><span>{{ post.date }}</span></div>
                         <p>{{ post.html_to_text|safe }}</p>
 
                     <hr><br>
