@@ -26,7 +26,7 @@ class SubCategory(models.Model):
     name = models.CharField(max_length=50)
     slug = models.CharField(max_length=60, unique=True, blank=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    thumbnail = models.FileField(upload_to='blog/post', null=True, blank=True)
+    thumbnail = models.FileField(upload_to='blog/subcat', null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -53,9 +53,9 @@ class Post(models.Model):
     subcategory = models.ForeignKey(SubCategory, on_delete=models.CASCADE, null=True)
     author = models.ForeignKey(MyUser, on_delete=models.CASCADE)
     grade = models.CharField(max_length=120, default="student name", blank=True)
-    thumbnail = models.FileField(upload_to='blog/post/thumbnail', null=True, blank=True)
-    files = models.FileField(upload_to='blog/post', null=True, blank=True)
-    video = models.BooleanField(default=False)
+    thumbnail = models.FileField(upload_to='blog/thumbnail', null=True, blank=True)
+    files = models.FileField(upload_to='blog/post1', null=True, blank=True)
+    video_or_not = models.BooleanField(default=False)
     pdf = models.BooleanField(default=False)
     date = models.DateField(auto_now=True)
     likes = models.ManyToManyField(User, related_name='blog_likes')
