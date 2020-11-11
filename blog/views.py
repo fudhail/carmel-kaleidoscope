@@ -73,7 +73,7 @@ class SubCategoryView(ListView):
 
     def get_context_data(self):
         context = super().get_context_data()
-        context['subcategories'] = SubCategory.objects.all()
+        context['subcategories'] = Category.objects.all()
         context['slug'] = SubCategory.objects.get(slug=self.request.resolver_match.kwargs.get('slug'))
         return context
 
