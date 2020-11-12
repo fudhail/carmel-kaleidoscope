@@ -55,7 +55,7 @@
                 </div>
                 <div class="category-buttons">
             {% for category in subcategories %}
-            <a href="{% url 'subcategory' category.slug %}"><button>{{ category.name }}</button></a>
+            <a href="{% url 'category' category.slug %}"><button>{{ category.name }}</button></a>
             {% endfor %}
         </div><br>
           {% for post in posts %}

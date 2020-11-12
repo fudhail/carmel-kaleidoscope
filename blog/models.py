@@ -47,7 +47,7 @@ class Post(models.Model):
     ]
     title = models.CharField(max_length=120, default="Student Name")
     slug = models.CharField(max_length=60, unique=True, blank=True)
-    content = tinymce_models.HTMLField(blank=True)
+    content = tinymce_models.HTMLField(blank=True, default=None)
     status = models.CharField(max_length=1, choices=statuses)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     subcategory = models.ForeignKey(SubCategory, on_delete=models.CASCADE, null=True)
