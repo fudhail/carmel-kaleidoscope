@@ -137,7 +137,7 @@ class PostCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
     permission_required = "blog.add_post"
     form_class = PostForm
     template_name = "blog/post_create_update.html"
-    # success_url = "/blogs"
+    success_url = "/accounts/my-posts"
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
@@ -155,6 +155,7 @@ class PostUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UserPassesTest
     model = Post
     form_class = PostForm
     template_name = "blog/post_create_update.html"
+    success_url = "/accounts/my-posts"
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
