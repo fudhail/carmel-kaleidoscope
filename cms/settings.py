@@ -28,7 +28,7 @@ SECRET_KEY = '-c_m6!nr-(hr5it9jg1ihj4s)^a)w+xi8xcxq&p*074hq0ln&4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['cskkaleidoscope.live', 'www.cskkaleidoscope.live', '172.20.10.4','127.0.0.1','localhost', '172.20.10.4', '192.168.43.66', '192.168.1.104', '162.187.113.227']
+ALLOWED_HOSTS = ['cskkaleidoscope.live', 'www.cskkaleidoscope.live', '172.20.10.4','127.0.0.1','localhost', '172.20.10.4', '192.168.43.66', '192.168.1.104', '168.187.113.227']
 
 
 # Application definition
