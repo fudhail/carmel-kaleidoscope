@@ -29,9 +29,10 @@ class ContactForm(forms.Form):
 
 
 class PostForm(ModelForm):
-    content = forms.CharField(widget=TinyMCE(attrs={'cols': 80, 'rows': 30}))
+    content = forms.CharField(widget=TinyMCE(attrs={'cols': 80, 'rows': 30}), required=False)
     author = forms.CharField(disabled=True)
+    pdf_file_extra = forms.FileField(required=False)
 
     class Meta:
         model = Post
-        fields = ['title', 'content', 'status', 'category', 'subcategory', 'grade', 'files', 'video_or_not', 'thumbnail']
+        fields = ['title', 'student', 'content', 'status', 'category', 'subcategory', 'grade', 'thumbnail', 'files', 'video_or_not', 'pdf', 'pdf_file_extra']

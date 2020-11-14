@@ -45,8 +45,9 @@ class Post(models.Model):
         ('D', 'Draft'),
         ('P', 'Publish')
     ]
-    title = models.CharField(max_length=120, default="Student Name")
+    title = models.CharField(max_length=120, default="Any Title")
     slug = models.CharField(max_length=60, unique=True, blank=True)
+    student = models.CharField(max_length=120, default="Student Name")
     content = tinymce_models.HTMLField(blank=True, default=None)
     status = models.CharField(max_length=1, choices=statuses)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
@@ -56,6 +57,8 @@ class Post(models.Model):
     thumbnail = models.FileField(upload_to='blog/thumbnail', null=True, blank=True)
     files = models.FileField(upload_to='blog/post1', null=True, blank=True)
     video_or_not = models.BooleanField(default=False)
+    pdf = models.BooleanField(default=False)
+    pdf_file_extra = models.FileField(upload_to='blog/post2', null=True, blank=True)
     date = models.DateField(auto_now=True)
     likes = models.ManyToManyField(User, related_name='blog_likes')
 

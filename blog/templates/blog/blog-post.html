@@ -65,10 +65,22 @@
               {% endif %}
 
                     <div class="post-body">
-                        <h3>{{ post.title }}</h3>
+                        <h3>{{ post.student }}</h3>
                         <div class="post-info"><span>{{ post.grade }}</span><span>{{ post.date }}</span></div>
                         <p>{{ post.html_to_text|safe }}</p>
-
+{% if post.pdf %}
+<hr>
+<div>
+<iframe
+    src="{{ post.pdf_file_extra.url }}"
+    width="100%"
+    height="1000"
+    style="border: none;">
+    <p>Your browser does not support PDFs.
+      <a href="{{ post.pdf_file_extra.url }}">Download the PDF</a>.</p>
+  </iframe>
+</div>
+  {% endif %}
                     <hr><br>
    <div class="tag-container">
 
