@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+{% load static %}
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Carmel Kaleidoscope</title>
+
+            <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+            <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
+            <link href="{% static 'home/css/font-awesome.min.css' %}" rel="stylesheet">
+
+            <link href="{% static 'home/css/main.css' %}" rel="stylesheet" type="text/css">
+          </head>
+          <body id="top" style="background-image:url({% static 'home/css/img/cover.jpg' %});background-repeat:no-repeat; background-position: center;"><div class="site-wrapper">
+          <div class="site-wrapper-inner">
+            <div class="cover-container">
+              <div class="masthead clearfix">
+                <div class="inner">
+                  <h3 class="masthead-brand">CARMEL SCHOOL</h3>
+
+                </div>
+              </div><br>
+              <div class="inner cover">
+                <h1 class="cover-heading">CARMEL KALEIDOSCOPE</h1>
+                <h1>A CARMEL FIESTA</h1>
+                <br>
+                <p class="lead"><a href="/home"><button type="button" class="btn btn-lg btn-default btn-notify">Posts</button></a></p>
+              </div>
+
+              <div class="mastfoot">
+                <div class="inner">
+                  <div class="center-floated"><h3>visits: {{count}}</h3></div>
+                  <br>
+                  <p>&copy; Carmel School. Design: Covid Cabinet.</p>
+                </div>
+              </div>
+
+            </div>
+
+    </div>
+  </div>
+</div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <script src="{% static 'home/js/main.js' %}""></script>
+
+
+
+
+  </body>
+</html>

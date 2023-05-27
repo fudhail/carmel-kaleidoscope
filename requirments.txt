@@ -1,0 +1,8 @@
+asgiref
+beautifulsoup4
+Django
+django-tinymce
+Pillow
+pytz
+soupsieve
+sqlparse
